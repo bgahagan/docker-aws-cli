@@ -1,8 +1,8 @@
-FROM alpine:3.3
+FROM alpine:3.10
 
 # Install awscli
 ARG CLI_VERSION=1.16.209
-RUN apk add --no-cache py-pip && \
+RUN apk add --no-cache groff less py2-pip && \
     pip install awscli==$CLI_VERSION
 
 # Create an aws launcher that explicity uses HOME=/home
